@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Crud;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
