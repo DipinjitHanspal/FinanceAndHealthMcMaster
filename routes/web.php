@@ -15,6 +15,15 @@
 //     return view('welcome');
 // });
 
-Route::get('/', function() {
-    return view('index');
+Route::get('/', 'HomeController@index')->name('index');
+
+Route::get('/login', function() {
+    return view('login');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
