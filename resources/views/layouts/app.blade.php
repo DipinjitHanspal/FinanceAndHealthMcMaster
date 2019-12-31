@@ -74,8 +74,8 @@
         <div id="app">
             <main class="py-4">
                 <!-- <example-component></example-component> -->
-
-                @yield('content')
+                <nav-bar v-bind:status="session('status')"></nav-bar>
+                <!-- @yield('content') -->
             </main>
         </div>
         <script src="{{ asset('js/app.js') }}"></script>
