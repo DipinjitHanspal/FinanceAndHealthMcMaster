@@ -14,16 +14,24 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-
-Route::get('/', 'HomeController@index')->name('index');
-
-Route::get('/login', function() {
-    return view('login');
-});
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::post('/login', 'Auth\LoginController@login');
+Route::post('/logout', 'Auth\LoginController@logout')->name('/');
+Route::post('/dashboard', 'HomeController@index')->middleware('auth');
+// Route::post('/home', 'Home')
+Route::get('/{any}', 'HomeController@index')->where('any', '.*');
 
-Auth::routes();
+// Route::get('/login', );
+// Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/auth','Auth\LoginController@login');
+// // Route::get('/loginUser', 'LoginController@login');
+
+// // Route::get('/home', 'HomeController@index')->name('home');
+
+// // Auth::routes();
+
+// // Route::get('/home', 'HomeController@index')->name('home');
+
+// Route::get('/test', 'TestController@test');
