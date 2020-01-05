@@ -5,39 +5,38 @@
  */
 require("./bootstrap");
 
-import Vue from "vue"; 
-import Vuex from 'vuex'
+import Vue from "vue";
+import Vuex from "vuex";
 import VueRouter from "vue-router";
-import NavBar from "./components/NavBar.vue"
-import routes from "./routes.js"
+import NavBar from "./components/NavBar.vue";
+import routes from "./routes.js";
 Vue.use(VueRouter);
 Vue.use(Vuex);
 
-
 const store = new Vuex.Store({
     state: {
-        user : null
+        user: "Dipin"
     },
     mutations: {
         setAuthUser(state, user) {
             state.user = user;
-        }
-    },
-    getters : {
-        isLoggedIn(state) {
-            return state.user !== null;
+        },
+        getters: {
+            isLoggedIn(state) {
+                return state.user !== null;
+            }
         }
     }
-})
+});
 
 const router = new VueRouter({
     mode: "history",
-    routes, 
+    routes
 });
 
 const app = new Vue({
-    el: '#app', // mount the base component
+    el: "#app", // mount the base component
     components: { NavBar },
     router,
     store
-})
+});

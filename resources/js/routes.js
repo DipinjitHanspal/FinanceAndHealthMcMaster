@@ -1,6 +1,6 @@
 import ExampleComponent from "./components/ExampleComponent.vue"
-import Login from "./components/Auth/Login.vue"
-import Register from "./components/Auth/Register.vue"
+// import Login from "./components/Auth/Login.vue"
+// import Register from "./components/Auth/Register.vue"
 import App from "./components/App.vue"
 
 const routes = () => {
@@ -15,16 +15,16 @@ const routes = () => {
             name: "app",
             component: App
         },
-        {
-            path: "/login",
-            name: "user.login",
-            component: Login
-        },
-        {
-            path: "/register",
-            name: "user.register",
-            component: Register
-        }
+        // {
+        //     path: "/login",
+        //     name: "user.login",
+        //     component: Login
+        // },
+        // {
+        //     path: "/register",
+        //     name: "user.register",
+        //     component: Register
+        // }
     ]
 }
 
