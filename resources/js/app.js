@@ -15,17 +15,17 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
-        user: "Dipin"
+        user: "Default User"
     },
     mutations: {
         setAuthUser(state, user) {
             state.user = user;
-        },
-        getters: {
-            isLoggedIn(state) {
-                return state.user !== null;
-            }
         }
+    },
+    getters: {
+        isLoggedIn(state) {
+            return state.user !== null;
+        },
     }
 });
 

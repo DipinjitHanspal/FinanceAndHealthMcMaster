@@ -1871,10 +1871,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 // import Login from './Auth/Login.vue'
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    Login: Login // register component
-
-  }
+  components: {}
 });
 
 /***/ }),
@@ -1977,6 +1974,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['status', 'name', 'app'],
+  data: function data() {
+    return {// user: this.$store.state.user
+    };
+  },
   mounted: function mounted() {
     console.log('Component mounted.');
   },
@@ -1988,6 +1989,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     loggedIn: function loggedIn() {
       return this.$store.getters.isLoggedIn;
+    },
+    user: function user() {
+      return this.$store.state.user;
     }
   }
 });
@@ -37464,7 +37468,7 @@ var render = function() {
                     "router-link",
                     {
                       staticClass: "nav-link",
-                      attrs: { tag: "a", to: { name: "user.login" } }
+                      attrs: { tag: "a", to: { name: "landing" } }
                     },
                     [_vm._v("Login")]
                   )
@@ -37474,9 +37478,27 @@ var render = function() {
               _vm._v(" "),
               _vm.loggedIn
                 ? _c("li", { staticClass: "nav-item dropdown" }, [
-                    _vm._m(1),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-link dropdown-toggle",
+                        attrs: {
+                          id: "navbarDropdown",
+                          href: "#",
+                          role: "button",
+                          "data-toggle": "dropdown",
+                          "aria-haspopup": "true",
+                          "aria-expanded": "false"
+                        }
+                      },
+                      [
+                        _c("span", { staticClass: "caret" }, [
+                          _vm._v(" " + _vm._s(_vm.user) + " ")
+                        ])
+                      ]
+                    ),
                     _vm._v(" "),
-                    _vm._m(2)
+                    _vm._m(1)
                   ])
                 : _c(
                     "li",
@@ -37519,30 +37541,6 @@ var staticRenderFns = [
         }
       },
       [_c("span", { staticClass: "navbar-toggler-icon" })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        pre: true,
-        attrs: {
-          id: "navbarDropdown",
-          class: "nav-link dropdown-toggle",
-          href: "#",
-          role: "button",
-          "data-toggle": "dropdown",
-          "aria-haspopup": "true",
-          "aria-expanded": "false"
-        }
-      },
-      [
-        _vm._v("\n                            {{ this.$store.user }} "),
-        _c("span", { pre: true, attrs: { class: "caret" } })
-      ]
     )
   },
   function() {
@@ -53748,16 +53746,16 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: {
-    user: "Dipin"
+    user: "Default User"
   },
   mutations: {
     setAuthUser: function setAuthUser(state, user) {
       state.user = user;
-    },
-    getters: {
-      isLoggedIn: function isLoggedIn(state) {
-        return state.user !== null;
-      }
+    }
+  },
+  getters: {
+    isLoggedIn: function isLoggedIn(state) {
+      return state.user !== null;
     }
   }
 });

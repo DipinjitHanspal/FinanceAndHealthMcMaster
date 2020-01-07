@@ -11,7 +11,6 @@
   // import Login from './Auth/Login.vue'
   export default{
     components:{
-      Login  // register component
     }
   }
 
