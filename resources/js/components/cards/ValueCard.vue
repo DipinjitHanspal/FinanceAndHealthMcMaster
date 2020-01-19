@@ -17,7 +17,7 @@ export default {
       type: String
     },
     value : {
-        type: Number
+        type: String
     }
   },
   components: {  }
