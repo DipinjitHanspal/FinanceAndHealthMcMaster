@@ -1977,32 +1977,24 @@ var id = 1;
     Card: _Card_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
-    return {
-      col1: [{
-        id: 0,
-        type: "greeting",
-        header: "Greeting"
-      }, {
-        id: 1,
-        type: "value",
-        value: "2200",
-        header: "Average Calories"
-      }, {
-        id: 2,
-        type: "nutrient",
-        header: "Macros"
-      }],
-      col2: [{
-        id: 0,
-        type: "value",
-        header: "Funds Remaining",
-        value: "$2530"
-      }, {
-        id: 1,
-        type: "burndown",
-        header: "Burndown"
-      }]
-    };
+    return {};
+  },
+  computed: {
+    grid: {
+      get: function get() {
+        return this.$store.state.grid;
+      },
+      set: function set(value) {
+        this.$store.commit('setGrid', {
+          value: value
+        });
+      }
+    }
+  },
+  methods: {
+    updateGridStore: function updateGridStore() {
+      this.$store.dispatch('updateGridStore');
+    }
   }
 });
 
@@ -2095,23 +2087,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['status', 'name', 'app'],
   data: function data() {
     return {// user: this.$store.state.user
     };
   },
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  },
+  mounted: function mounted() {},
   computed: {
     app_name: function app_name() {
       if (!this.app) {
@@ -75499,6 +75481,132 @@ var reactiveProp = {
 
 /***/ }),
 
+/***/ "./node_modules/vue-cookies/vue-cookies.js":
+/*!*************************************************!*\
+  !*** ./node_modules/vue-cookies/vue-cookies.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Vue Cookies v1.6.1
+ * https://github.com/cmp-cc/vue-cookies
+ *
+ * Copyright 2016, cmp-cc
+ * Released under the MIT license
+ */
+
+(function() {
+
+    var defaultConfig = {
+        expires : '1d',
+        path : '; path=/',
+        domain:'',
+        secure:'',
+    }
+
+    var VueCookies = {
+        // install of Vue
+        install: function(Vue) {
+            Vue.prototype.$cookies = this
+            Vue.$cookies = this
+        },
+        config : function(expireTimes,path,domain,secure) {
+            defaultConfig.expires = expireTimes ? expireTimes : '1d';
+            defaultConfig.path = path ? '; path=' + path : '; path=/';
+            defaultConfig.domain = domain ? '; domain=' + domain : '';
+            defaultConfig.secure = secure ? '; secure' : '';
+        },
+        get: function(key) {
+            var value = decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(key).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null
+
+            if(value && value.substring(0,1) === "{" && value.substring(value.length-1,value.length) === "}") {
+                try {
+                    value = JSON.parse(value)
+                }catch (e) {
+                    return value;
+                }
+            }
+            return value;
+        },
+        set: function(key, value, expireTimes, path, domain, secure) {
+            if (!key) {
+                throw new Error("cookie name is not find in first argument")
+            }else if(/^(?:expires|max\-age|path|domain|secure)$/i.test(key)){
+                throw new Error("cookie key name illegality ,Cannot be set to ['expires','max-age','path','domain','secure']\t","current key name: "+key);
+            }
+            // support json object
+            if(value && value.constructor === Object) {
+                value = JSON.stringify(value);
+            }
+            var _expires = "";
+            expireTimes = expireTimes === undefined ? defaultConfig.expires : expireTimes;
+            if (expireTimes && expireTimes != 0) {
+                switch (expireTimes.constructor) {
+                    case Number:
+                        if(expireTimes === Infinity || expireTimes === -1) _expires = "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+                        else _expires = "; max-age=" + expireTimes;
+                        break;
+                    case String:
+                        if (/^(?:\d{1,}(y|m|d|h|min|s))$/i.test(expireTimes)) {
+                            // get capture number group
+                            var _expireTime = expireTimes.replace(/^(\d{1,})(?:y|m|d|h|min|s)$/i, "$1");
+                            // get capture type group , to lower case
+                            switch (expireTimes.replace(/^(?:\d{1,})(y|m|d|h|min|s)$/i, "$1").toLowerCase()) {
+                                // Frequency sorting
+                                case 'm':  _expires = "; max-age=" + +_expireTime * 2592000; break; // 60 * 60 * 24 * 30
+                                case 'd':  _expires = "; max-age=" + +_expireTime * 86400; break; // 60 * 60 * 24
+                                case 'h': _expires = "; max-age=" + +_expireTime * 3600; break; // 60 * 60
+                                case 'min':  _expires = "; max-age=" + +_expireTime * 60; break; // 60
+                                case 's': _expires = "; max-age=" + _expireTime; break;
+                                case 'y': _expires = "; max-age=" + +_expireTime * 31104000; break; // 60 * 60 * 24 * 30 * 12
+                                default: new Error("unknown exception of 'set operation'");
+                            }
+                        } else {
+                            _expires = "; expires=" + expireTimes;
+                        }
+                        break;
+                    case Date:
+                        _expires = "; expires=" + expireTimes.toUTCString();
+                        break;
+                }
+            }
+            document.cookie = encodeURIComponent(key) + "=" + encodeURIComponent(value) + _expires + (domain ? "; domain=" + domain : defaultConfig.domain) + (path ? "; path=" + path : defaultConfig.path) + (secure === undefined ? defaultConfig.secure : secure ? "; secure" : "");
+            return this;
+        },
+        remove: function(key, path, domain) {
+            if (!key || !this.isKey(key)) {
+                return false;
+            }
+            document.cookie = encodeURIComponent(key) + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT" + (domain ? "; domain=" + domain : defaultConfig.domain) + (path ? "; path=" + path : defaultConfig.path);
+            return this;
+        },
+        isKey: function(key) {
+            return (new RegExp("(?:^|;\\s*)" + encodeURIComponent(key).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=")).test(document.cookie);
+        },
+        keys:  function() {
+            if(!document.cookie) return [];
+            var _keys = document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g, "").split(/\s*(?:\=[^;]*)?;\s*/);
+            for (var _index = 0; _index < _keys.length; _index++) {
+                _keys[_index] = decodeURIComponent(_keys[_index]);
+            }
+            return _keys;
+        }
+    }
+
+    if (true) {
+        module.exports = VueCookies;
+    } else {}
+    // vue-cookies can exist independently,no dependencies library
+    if(typeof window!=="undefined"){
+        window.$cookies = VueCookies;
+    }
+
+})()
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/App.vue?vue&type=template&id=332fccf4&":
 /*!******************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/App.vue?vue&type=template&id=332fccf4& ***!
@@ -75592,8 +75700,19 @@ var render = function() {
     [
       _c(
         "draggable",
-        { staticClass: "col-sm-5", attrs: { list: _vm.col1, group: "a" } },
-        _vm._l(_vm.col1, function(item) {
+        {
+          staticClass: "col-sm-5",
+          attrs: { group: "a" },
+          on: { end: _vm.updateGridStore },
+          model: {
+            value: _vm.grid.col1,
+            callback: function($$v) {
+              _vm.$set(_vm.grid, "col1", $$v)
+            },
+            expression: "grid.col1"
+          }
+        },
+        _vm._l(_vm.grid.col1, function(item) {
           return _c("Card", {
             key: item.header + item.type,
             attrs: {
@@ -75608,8 +75727,12 @@ var render = function() {
       _vm._v(" "),
       _c(
         "draggable",
-        { staticClass: "col-sm-5", attrs: { list: _vm.col2, group: "a" } },
-        _vm._l(_vm.col2, function(item) {
+        {
+          staticClass: "col-sm-5",
+          attrs: { list: _vm.grid.col2, group: "a" },
+          on: { end: _vm.updateGridStore }
+        },
+        _vm._l(_vm.grid.col2, function(item) {
           return _c("Card", {
             key: item.header + item.type,
             attrs: {
@@ -95384,9 +95507,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var _components_NavBar_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/NavBar.vue */ "./resources/js/components/NavBar.vue");
-/* harmony import */ var _routes_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./routes.js */ "./resources/js/routes.js");
+/* harmony import */ var vue_cookies__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-cookies */ "./node_modules/vue-cookies/vue-cookies.js");
+/* harmony import */ var vue_cookies__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_cookies__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _components_NavBar_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/NavBar.vue */ "./resources/js/components/NavBar.vue");
+/* harmony import */ var _routes_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./routes.js */ "./resources/js/routes.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -95399,32 +95524,69 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]);
+
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_3__["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_cookies__WEBPACK_IMPORTED_MODULE_2___default.a);
 var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: {
-    user: "Default User"
+    user: "Default User",
+    grid: {
+      col1: [{
+        id: 0,
+        type: "greeting",
+        header: "Greeting"
+      }, {
+        id: 1,
+        type: "value",
+        value: "2200",
+        header: "Average Calories"
+      }, {
+        id: 2,
+        type: "nutrient",
+        header: "Macros"
+      }],
+      col2: [{
+        id: 0,
+        type: "value",
+        header: "Funds Remaining",
+        value: "$2530"
+      }, {
+        id: 1,
+        type: "burndown",
+        header: "Burndown"
+      }]
+    }
   },
   mutations: {
     setAuthUser: function setAuthUser(state, user) {
       state.user = user;
+    },
+    setGrid: function setGrid(state, grid) {
+      state.grid = grid;
     }
   },
   getters: {
     isLoggedIn: function isLoggedIn(state) {
       return state.user !== null;
     }
+  },
+  actions: {
+    updateGridStore: function updateGridStore(context) {
+      var jsonGrid = JSON.parse(JSON.stringify(context.state.grid));
+      $cookies.set("grid-data", jsonGrid);
+    }
   }
 });
-var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
+var router = new vue_router__WEBPACK_IMPORTED_MODULE_3__["default"]({
   mode: "history",
-  routes: _routes_js__WEBPACK_IMPORTED_MODULE_4__["default"]
+  routes: _routes_js__WEBPACK_IMPORTED_MODULE_5__["default"]
 });
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: "#app",
   // mount the base component
   components: {
-    NavBar: _components_NavBar_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    NavBar: _components_NavBar_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   router: router,
   store: store

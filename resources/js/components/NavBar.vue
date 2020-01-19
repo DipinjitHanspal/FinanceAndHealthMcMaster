@@ -11,21 +11,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        <!-- @guest -->
                         <li class="nav-item">
-                            <!-- <a class="nav-link" href="/login">Login</a> -->
                             <router-link class="nav-link"  tag="a" :to="{name : 'landing'}">Login</router-link>
                         </li>
-                        <!-- @if (Route::has('register')) -->
-                        
-                        <!-- @endif -->
-                        <!-- @else -->
+
                         <li class="nav-item dropdown" v-if="loggedIn">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="caret"> {{ user }} </span>
@@ -45,7 +38,6 @@
                         <li class="nav-item" v-else>
                             <router-link class="nav-link" tag="a" :to="{name : 'user.register'}">Register</router-link>
                         </li>
-                        <!-- @endguest -->
                     </ul>
                 </div>
             </div>
@@ -59,9 +51,8 @@
             return {
                 // user: this.$store.state.user
             }
-        }, 
+        },
         mounted() {
-            console.log('Component mounted.')
         },
         computed: {
             app_name() {
