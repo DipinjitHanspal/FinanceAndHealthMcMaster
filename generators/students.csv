@@ -1,100 +1,251 @@
-TorresMa,Marcus,Torres,400058093,Computer Science,4392,
-GaySt,Stanley,Gay,400013330,Nursing,1789,
-ButlerMe,Melissa,Butler,400061433,Biomedical Engineering,3508,
-ArndtMo,Monique,Arndt,400000763,Electrical Engineering,4150,
-BessemerTi,Tina,Bessemer,400066205,Software Engineering,2210,
-RitzmanLa,Lawrence,Ritzman,400014807,Health Science,3223,
-ArroligaCr,Cristy,Arroliga,400017819,Biomedical Engineering,3821,
-GershonEr,Eric,Gershon,400036677,Software Engineering,3925,
-RoemerEa,Earl,Roemer,400081409,Engineering,3629,
-GaffneyWi,William,Gaffney,400046439,Sociology,4700,
-PoormanBe,Ben,Poorman,400029624,Computer Science,1892,
-KnowltonLa,Larry,Knowlton,400034631,Life Science,2673,
-LoweryMi,Michael,Lowery,400042928,Computer Science,2770,
-AdamsDa,Damon,Adams,400083167,Computer Science,5683,
-BensonCy,Cynthia,Benson,400063275,Life Science,5640,
-StephensonEr,Erik,Stephenson,400033167,Life Science,2769,
-WelchMa,Matthew,Welch,400013505,Biomedical Engineering,4428,
-BenevidesKa,Kathlyn,Benevides,400084536,Nursing,5720,
-JacksonHe,Henry,Jackson,400003622,Computer Science,3776,
-ByarsMe,Merlin,Byars,400008110,Sociology,5301,
-MartonDa,Dan,Marton,400014830,Engineering,3818,
-ChanLe,Leon,Chan,400047814,Health Science,3169,
-HallmarkFe,Fern,Hallmark,400033797,Life Science,3340,
-RossLo,Lorraine,Ross,400034600,Software Engineering,5759,
-MarquezJo,Joseph,Marquez,400023827,Sociology,3774,
-OvertonTe,Teri,Overton,400032744,Computer Science,1822,
-TeboDe,Deborah,Tebo,400085141,Software Engineering,3733,
-CoteTh,Thomas,Cote,400072449,Sociology,5341,
-MckeithanMi,Michael,Mckeithan,400078386,Engineering,4820,
-JohnJa,Janet,John,400073132,Nursing,5853,
-MembersJe,Jerome,Members,400084234,Computer Science,2707,
-BiggerstaffMi,Michele,Biggerstaff,400082461,Sociology,2858,
-BakerCa,Carol,Baker,400007660,Life Science,5824,
-BrownAn,Anton,Brown,400068870,Health Science,5052,
-NooeAr,Arlene,Nooe,400011555,Health Science,4460,
-BrownJo,John,Brown,400049078,Electrical Engineering,3500,
-PorterJo,Jonathan,Porter,400001861,Computer Science,4795,
-TangPe,Peter,Tang,400071308,Sociology,3857,
-RasmussenAn,Angela,Rasmussen,400004515,Life Science,4269,
-DraytonDa,David,Drayton,400071741,Software Engineering,1745,
-RushTy,Tyler,Rush,400057452,Biomedical Engineering,5713,
-HendersonKa,Kay,Henderson,400026055,Engineering,2335,
-RobbinsDa,David,Robbins,400059176,Biomedical Engineering,3118,
-OconnellEu,Eugene,Oconnell,400055795,Electrical Engineering,5421,
-KaminskiCh,Christine,Kaminski,400065690,Computer Science,4825,
-FreemanLa,Larry,Freeman,400050185,Biomedical Engineering,4190,
-WindsorHe,Henry,Windsor,400053005,Life Science,4410,
-JohnsonJo,Joshua,Johnson,400077248,Electrical Engineering,2912,
-LennonHe,Hector,Lennon,400031086,Electrical Engineering,3265,
-RinkelCa,Cary,Rinkel,400031325,Sociology,2233,
-JanousekHe,Helen,Janousek,400084115,Nursing,3639,
-MendezRu,Ruby,Mendez,400062788,Health Science,2449,
-MillerJe,Jennie,Miller,400028984,Electrical Engineering,3399,
-DiasTh,Theresa,Dias,400017042,Sociology,4514,
-HoferKe,Kelly,Hofer,400050243,Nursing,4036,
-ApplebyIr,Irene,Appleby,400077325,Computer Science,3543,
-VaughanRi,Richard,Vaughan,400076035,Nursing,2712,
-EscarcegaLo,Lottie,Escarcega,400010627,Computer Science,2868,
-JonesSh,Shelby,Jones,400088024,Life Science,4519,
-KinaAr,Arlene,Kina,400053488,Sociology,5245,
-GillumSe,Sean,Gillum,400007933,Electrical Engineering,1976,
-ManaloRi,Richard,Manalo,400071408,Health Science,2490,
-DeangeloBr,Brandon,Deangelo,400053468,Nursing,1795,
-BonhamJa,James,Bonham,400065759,Engineering,3236,
-GallupDo,Donald,Gallup,400083253,Life Science,3648,
-SearsAm,Amy,Sears,400048366,Engineering,1952,
-MaxwellJo,Joseph,Maxwell,400024084,Computer Science,5959,
-CardoneSt,Steven,Cardone,400059484,Computer Science,3181,
-CookLa,Lavern,Cook,400018097,Software Engineering,1778,
-FloresKe,Kevin,Flores,400021205,Life Science,1501,
-CastilloRo,Robert,Castillo,400069231,Sociology,4177,
-BillsAn,Antonio,Bills,400037231,Sociology,1868,
-OhmenHa,Hazel,Ohmen,400087179,Nursing,1501,
-KimAl,Allan,Kim,400046605,Nursing,1678,
-BrownAl,Alan,Brown,400048998,Health Science,3736,
-AronoffJo,Joshua,Aronoff,400047441,Engineering,3565,
-IchikawaMy,Myron,Ichikawa,400007699,Biomedical Engineering,2609,
-HaneyNo,Nola,Haney,400078150,Nursing,5464,
-LettKe,Kelly,Lett,400038981,Health Science,2112,
-RathboneDa,David,Rathbone,400086339,Computer Science,5278,
-BarbianRo,Ronald,Barbian,400044491,Software Engineering,1962,
-MosqueraFr,Frank,Mosquera,400014783,Life Science,3637,
-MartinezCo,Columbus,Martinez,400066082,Biomedical Engineering,2291,
-JohnsonWa,Wanda,Johnson,400013774,Engineering,4348,
-ThorntonCo,Cody,Thornton,400073527,Life Science,3665,
-RogersRo,Robert,Rogers,400080684,Biomedical Engineering,1588,
-HarveyGa,Gabrielle,Harvey,400008248,Life Science,2551,
-MossCa,Carl,Moss,400077028,Electrical Engineering,4911,
-VargasFl,Florence,Vargas,400078774,Software Engineering,5386,
-JacquesSt,Steven,Jacques,400020545,Sociology,5572,
-BurnettNo,Nola,Burnett,400051715,Software Engineering,4550,
-YorkAl,Alan,York,400012179,Nursing,4235,
-LeroyMi,Michel,Leroy,400035041,Nursing,3271,
-JesseJi,Jim,Jesse,400057358,Engineering,3047,
-SchwendingerJo,John,Schwendinger,400018604,Electrical Engineering,3053,
-BryantJo,Joanne,Bryant,400007282,Health Science,4946,
-LalibertePe,Pearl,Laliberte,400040687,Engineering,2415,
-ChestnutMy,Myrtle,Chestnut,400011470,Software Engineering,5120,
-RayosMa,Marian,Rayos,400063993,Software Engineering,5606,
-HetzBr,Brian,Hetz,400022047,Nursing,5962,
+macID,fname,lname,student_num,program,balance
+EsterGa,Gary,Ester,400014031,Biomedical Engineering,5684
+BreedonDo,Donna,Breedon,400003766,Life Science,5921
+HiltnerRo,Robert,Hiltner,400001321,Biomedical Engineering,2057
+CubbageAn,Andy,Cubbage,400069666,Health Science,3960
+BakerTi,Timothy,Baker,400008322,Sociology,5548
+BinghamSa,Sally,Bingham,400028154,Software Engineering,4308
+SantosAr,Arleen,Santos,400028837,Software Engineering,3842
+KingKa,Karen,King,400007409,Life Science,4807
+DellingerNo,Norman,Dellinger,400074628,Health Science,4763
+WaltmanJe,Jennifer,Waltman,400021083,Computer Science,4982
+CollinsDo,Dorothy,Collins,400062546,Sociology,4538
+DurhamAs,Ashley,Durham,400037461,Health Science,1559
+BaileyGa,Gary,Bailey,400038718,Computer Science,3514
+MarchettiTi,Timothy,Marchetti,400066640,Electrical Engineering,5564
+HutchensJa,Jasmin,Hutchens,400004222,Biomedical Engineering,3683
+VegaMe,Mercy,Vega,400037656,Health Science,2991
+CruzDa,Damian,Cruz,400039630,Electrical Engineering,4850
+BrownAn,Andrew,Brown,400012804,Software Engineering,3175
+TurnerJu,Julie,Turner,400036717,Computer Science,5450
+HollandRe,Renee,Holland,400080663,Software Engineering,5734
+CobianTi,Tina,Cobian,400029133,Software Engineering,3717
+JacksonJo,Joyce,Jackson,400042801,Engineering,3782
+ByrdSt,Steven,Byrd,400046193,Sociology,3788
+DozierJo,Jorge,Dozier,400073769,Engineering,3615
+WallaceJo,Joaquin,Wallace,400085434,Electrical Engineering,4949
+MarteWi,William,Marte,400050545,Engineering,4339
+HasseLa,Larry,Hasse,400066075,Life Science,4202
+MarchmanBr,Brigitte,Marchman,400070753,Electrical Engineering,1851
+HortonRa,Rachael,Horton,400012975,Health Science,5725
+KlimczykPh,Phyllis,Klimczyk,400010006,Sociology,3945
+BrownCa,Catherine,Brown,400077176,Health Science,5859
+LawsonSh,Sherri,Lawson,400072214,Software Engineering,2822
+FisherAn,Annette,Fisher,400034394,Biomedical Engineering,2020
+CollisonRo,Robert,Collison,400043596,Life Science,2710
+SpeedDa,Daniel,Speed,400024687,Electrical Engineering,5792
+WinfieldBe,Bernice,Winfield,400039743,Health Science,3670
+OwensLi,Linda,Owens,400025949,Health Science,3647
+McafeeBo,Bob,Mcafee,400055828,Software Engineering,3956
+PulleyGl,Gladys,Pulley,400089902,Sociology,5565
+TheilerCy,Cynthia,Theiler,400010178,Engineering,3307
+GradyCh,Christopher,Grady,400026961,Software Engineering,5888
+NormanCh,Christopher,Norman,400058357,Computer Science,3215
+PollockKe,Kevin,Pollock,400061977,Electrical Engineering,3864
+CavanaughGl,Gladys,Cavanaugh,400063007,Engineering,2214
+BaldinoGe,George,Baldino,400000357,Computer Science,4752
+WardCh,Charles,Ward,400055497,Electrical Engineering,5359
+GonzalezHa,Harold,Gonzalez,400011861,Computer Science,4606
+MitchellCh,Christy,Mitchell,400065254,Computer Science,5107
+WassingerEa,Earline,Wassinger,400014879,Electrical Engineering,4997
+MartinCh,Christina,Martin,400005352,Health Science,2765
+CovielloDo,Donald,Coviello,400046613,Life Science,1528
+WoodwardEd,Edward,Woodward,400018864,Health Science,1621
+WinklerTr,Traci,Winkler,400079212,Electrical Engineering,2580
+WilsonEr,Ernest,Wilson,400031504,Electrical Engineering,4634
+MahoneyCr,Craig,Mahoney,400005362,Life Science,4251
+HernandezAl,Alpha,Hernandez,400045955,Biomedical Engineering,1842
+VineJo,John,Vine,400085601,Computer Science,5235
+WadeAn,Angel,Wade,400029530,Nursing,3423
+PorterPa,Paula,Porter,400047190,Nursing,4346
+SmithJu,Julius,Smith,400023914,Computer Science,2176
+AlexanderMa,Mary,Alexander,400011233,Electrical Engineering,3621
+KaylorGe,Gertrude,Kaylor,400016304,Electrical Engineering,2395
+ShaferJo,John,Shafer,400030362,Computer Science,5264
+McclureBr,Bryan,Mcclure,400049915,Computer Science,1836
+EskewDa,Daniel,Eskew,400050682,Engineering,4517
+CurranLu,Luke,Curran,400062437,Electrical Engineering,2875
+MarshMa,Mary,Marsh,400022901,Electrical Engineering,2568
+KurianDa,David,Kurian,400011894,Engineering,4627
+MullenJo,Joshua,Mullen,400038511,Electrical Engineering,1723
+ThomasKe,Kelli,Thomas,400085809,Health Science,5141
+PerezTe,Tessie,Perez,400022952,Electrical Engineering,5639
+LaraVi,Victor,Lara,400073100,Engineering,2266
+HeilmanMa,Marcela,Heilman,400083535,Electrical Engineering,1821
+CokerWi,Willian,Coker,400053806,Nursing,4053
+DomhoffRe,Regan,Domhoff,400054939,Nursing,2999
+ParsonsFe,Felicia,Parsons,400004422,Electrical Engineering,5855
+HancockBr,Bruce,Hancock,400089065,Computer Science,1574
+LahayBa,Barry,Lahay,400029136,Sociology,4218
+OsborneDe,Debra,Osborne,400053141,Health Science,1659
+OllisEr,Eric,Ollis,400082486,Electrical Engineering,4757
+CoutsRo,Robert,Couts,400068009,Life Science,4552
+MartinezFr,Fred,Martinez,400059073,Life Science,5592
+ReynoldsBe,Bessie,Reynolds,400038835,Computer Science,2037
+RayEa,Earl,Ray,400034523,Software Engineering,5412
+DonsonCo,Connie,Donson,400059206,Electrical Engineering,3136
+BrothertonLi,Linda,Brotherton,400005331,Biomedical Engineering,2308
+ByrneDo,Dominick,Byrne,400047447,Sociology,2328
+LemoineMa,Marjorie,Lemoine,400029734,Software Engineering,4053
+LoveNa,Natosha,Love,400081764,Engineering,1784
+LoganWi,William,Logan,400048189,Engineering,4923
+HackettEl,Eleanor,Hackett,400086987,Software Engineering,4476
+WardDo,Dorothy,Ward,400005389,Biomedical Engineering,4258
+SarniSu,Susan,Sarni,400032388,Engineering,5928
+CrowtherSh,Shirley,Crowther,400039604,Engineering,5826
+BurtonJe,Jeremy,Burton,400073676,Health Science,3774
+MclaughlinWi,William,Mclaughlin,400045306,Electrical Engineering,5806
+PerryCh,Charla,Perry,400087804,Sociology,2300
+FranklinMa,Maria,Franklin,400069052,Life Science,1866
+NazCl,Claudine,Naz,400078134,Electrical Engineering,1989
+HaynesMa,Margaret,Haynes,400060219,Electrical Engineering,2690
+SchmidtJe,Jennifer,Schmidt,400053263,Electrical Engineering,2212
+HollyNe,Neil,Holly,400004708,Engineering,4400
+HelmesMa,Martin,Helmes,400061645,Software Engineering,5360
+ColemanDo,Donna,Coleman,400043988,Electrical Engineering,1912
+LupkesRi,Ricardo,Lupkes,400080901,Health Science,5883
+CampbellAl,Allen,Campbell,400027821,Engineering,3183
+GreenSa,Sarah,Green,400061961,Software Engineering,4776
+DanforthSh,Shawn,Danforth,400077499,Health Science,4931
+RiceVi,Violet,Rice,400050364,Sociology,1735
+MintonTh,Thomas,Minton,400062807,Engineering,3967
+LuskJo,Joshua,Lusk,400059468,Software Engineering,1956
+TrajilloEv,Eva,Trajillo,400089893,Electrical Engineering,4189
+HubbertFo,Foster,Hubbert,400003376,Sociology,5654
+SmithBe,Beverly,Smith,400063865,Sociology,2465
+RuffoRo,Robert,Ruffo,400049845,Electrical Engineering,3914
+ZachmannMa,Mark,Zachmann,400070858,Biomedical Engineering,3245
+ManganoAr,Arlinda,Mangano,400034255,Sociology,2929
+CrawfordCl,Clifford,Crawford,400038698,Computer Science,1813
+MartinVi,Virginia,Martin,400085613,Computer Science,2701
+OplandJo,Joni,Opland,400084831,Software Engineering,3241
+SnyderLi,Lillie,Snyder,400023066,Biomedical Engineering,1690
+FainMi,Michael,Fain,400034501,Software Engineering,2694
+KressMa,Margaret,Kress,400046770,Software Engineering,3143
+PinaTo,Todd,Pina,400078830,Sociology,5872
+BennettTi,Timothy,Bennett,400054592,Software Engineering,5597
+MascaroJo,Jose,Mascaro,400082092,Health Science,4207
+LynchVi,Virginia,Lynch,400017048,Sociology,3796
+KnudsenAl,Alejandro,Knudsen,400042173,Electrical Engineering,5144
+WolfordLa,Laurie,Wolford,400033010,Sociology,4205
+HaubrichRi,Richard,Haubrich,400051277,Software Engineering,4999
+TronaasWi,Wilfred,Tronaas,400087791,Engineering,2395
+NunezTe,Tennille,Nunez,400081954,Electrical Engineering,4571
+SurgeonMi,Michael,Surgeon,400014061,Software Engineering,5312
+CarrollKi,Kimberly,Carroll,400021809,Electrical Engineering,5494
+SansburnMa,Margaret,Sansburn,400080330,Nursing,3055
+RembertPa,Patricia,Rembert,400087870,Electrical Engineering,4370
+RidenourTi,Tiffany,Ridenour,400084121,Electrical Engineering,3761
+BradyJa,James,Brady,400073141,Engineering,4041
+DaltonRe,Reginald,Dalton,400006142,Electrical Engineering,5771
+HorningTe,Terry,Horning,400052208,Electrical Engineering,5142
+ToweMa,Marianne,Towe,400024419,Sociology,4926
+BlaneJa,James,Blane,400016247,Computer Science,2379
+BullockAs,Ashley,Bullock,400058285,Sociology,3400
+QuinnMi,Michael,Quinn,400050166,Computer Science,1639
+SamarooKa,Kathryn,Samaroo,400028258,Sociology,3420
+AndersonJo,John,Anderson,400024865,Nursing,2373
+MoretonKa,Karen,Moreton,400026709,Computer Science,4802
+SnyderRi,Richard,Snyder,400019548,Nursing,2862
+McguireRo,Robin,Mcguire,400013348,Biomedical Engineering,4593
+MarloweDo,Dolores,Marlowe,400004312,Nursing,1650
+MoldenhauerWi,William,Moldenhauer,400081756,Engineering,5949
+MontaltoKa,Kara,Montalto,400044851,Computer Science,5365
+OrserSu,Susan,Orser,400063601,Nursing,5002
+HowellDi,Diana,Howell,400053592,Life Science,2988
+ObrienTh,Theresa,Obrien,400078993,Biomedical Engineering,4544
+KunertPa,Patricia,Kunert,400086103,Life Science,4059
+PiperGl,Gloria,Piper,400050443,Health Science,2276
+WelchMi,Michael,Welch,400015455,Software Engineering,2672
+BinghamCh,Charlotte,Bingham,400040961,Software Engineering,4634
+SanonMa,Marsha,Sanon,400006112,Life Science,1814
+MannBe,Betty,Mann,400080577,Engineering,2156
+EdginHa,Harold,Edgin,400039037,Life Science,1595
+GravesGl,Glenn,Graves,400032488,Software Engineering,2374
+EllisonSa,Sandra,Ellison,400061224,Sociology,4183
+CobbEa,Earl,Cobb,400012777,Life Science,5524
+AlvarezLe,Lelia,Alvarez,400023994,Biomedical Engineering,2134
+EvansSt,Stacey,Evans,400001845,Nursing,2028
+RobesonLo,Lorraine,Robeson,400004342,Engineering,3910
+SessionLe,Leo,Session,400057660,Biomedical Engineering,4741
+TaylorAn,Ana,Taylor,400078797,Health Science,2173
+ShawKa,Kathryne,Shaw,400075576,Health Science,1539
+WilcoxFr,Francisco,Wilcox,400086113,Health Science,3842
+EdensFr,Frank,Edens,400080510,Electrical Engineering,4953
+DavisAr,Arthur,Davis,400070106,Engineering,5021
+TorresCa,Carlos,Torres,400016405,Life Science,4062
+UzelacAb,Abdul,Uzelac,400048932,Sociology,3862
+HurtubiseEd,Edward,Hurtubise,400004691,Electrical Engineering,2993
+PlungyMa,Mark,Plungy,400078589,Biomedical Engineering,1763
+KieferTi,Timothy,Kiefer,400032228,Engineering,4751
+PedoneLi,Linda,Pedone,400016682,Engineering,5289
+UrenaAl,Alice,Urena,400027467,Nursing,3469
+VelasquezLa,Lavette,Velasquez,400049934,Health Science,3016
+CarpenterBr,Bryant,Carpenter,400059492,Biomedical Engineering,4702
+ShellerEd,Ed,Sheller,400076226,Biomedical Engineering,4556
+JohnstonPh,Phillip,Johnston,400077406,Engineering,2221
+GreenDa,Darrell,Green,400018779,Health Science,5352
+WilliamsEd,Edward,Williams,400015537,Life Science,3618
+JahnTh,Thomas,Jahn,400031595,Computer Science,3497
+WoodardRu,Russell,Woodard,400058387,Health Science,3975
+GuzmanFr,Fred,Guzman,400005841,Nursing,5181
+NormanPa,Patrick,Norman,400036875,Computer Science,3896
+BreretonTr,Travis,Brereton,400006882,Life Science,2710
+HayesTi,Tina,Hayes,400082574,Life Science,2206
+RammId,Ida,Ramm,400039134,Sociology,5166
+WilsonTr,Trisha,Wilson,400073647,Sociology,5029
+MarlorKa,Kate,Marlor,400034964,Health Science,4943
+MatinezPa,Patti,Matinez,400038531,Sociology,4903
+SmithMa,Marie,Smith,400061738,Software Engineering,5359
+BuffordDy,Dylan,Bufford,400085165,Engineering,5913
+CreightonWi,William,Creighton,400063438,Life Science,1884
+RackleyLa,Laura,Rackley,400087439,Life Science,5072
+MooreLo,Lorraine,Moore,400044251,Engineering,4760
+UnderwoodWa,Wayne,Underwood,400013242,Health Science,3100
+BevanFo,Forrest,Bevan,400088361,Nursing,5463
+SargentPa,Paul,Sargent,400040284,Electrical Engineering,4530
+MonnJo,John,Monn,400044217,Life Science,5042
+MoilanenJa,Jane,Moilanen,400030382,Health Science,2042
+HawleyRo,Robert,Hawley,400073242,Life Science,4767
+SalmeronAn,Andrew,Salmeron,400038316,Computer Science,3555
+HackathornPa,Pam,Hackathorn,400004427,Software Engineering,2625
+ChapmanEl,Eli,Chapman,400005527,Software Engineering,5210
+RamosDa,David,Ramos,400043095,Software Engineering,5687
+OlearyMa,Maryann,Oleary,400068881,Software Engineering,4069
+WentworthSh,Shizue,Wentworth,400052855,Software Engineering,5215
+DavenportSh,Sheila,Davenport,400032794,Computer Science,2737
+BowersAm,Amanda,Bowers,400014354,Software Engineering,5370
+FerdinandJo,Johnny,Ferdinand,400030448,Life Science,5540
+GomezIs,Isaac,Gomez,400000876,Health Science,4352
+WilliamsonSh,Sharon,Williamson,400076870,Software Engineering,5039
+BrownHe,Herbert,Brown,400072376,Biomedical Engineering,5414
+JordanJa,Janice,Jordan,400078151,Life Science,4262
+BallKe,Kevin,Ball,400074280,Nursing,4990
+SuarezGr,Gregory,Suarez,400038750,Electrical Engineering,5427
+WalshPa,Patrick,Walsh,400007950,Life Science,4825
+BecerraBr,Bradley,Becerra,400058506,Health Science,4137
+FreemanJe,Jeannette,Freeman,400067522,Sociology,3000
+MayCu,Curtis,May,400065757,Nursing,3456
+SwannLi,Linda,Swann,400018987,Computer Science,2985
+PerezDo,Donna,Perez,400022792,Software Engineering,5853
+FultonCh,Christopher,Fulton,400044974,Engineering,2827
+OrtegaFa,Fatima,Ortega,400024788,Sociology,3164
+HeggeMa,Margaret,Hegge,400075486,Sociology,5265
+HortonOl,Oliver,Horton,400057049,Software Engineering,4095
+LeanenJo,Josefina,Leanen,400086414,Engineering,4261
+BatesRo,Robert,Bates,400025524,Electrical Engineering,1829
+DickinsonVa,Vada,Dickinson,400004411,Biomedical Engineering,5209
+MurphyBo,Bobby,Murphy,400042661,Sociology,4358
+MoralesKa,Katie,Morales,400048477,Nursing,4166
+HinderliterMi,Michael,Hinderliter,400041850,Electrical Engineering,2943
+PedenGr,Greg,Peden,400086739,Electrical Engineering,2257
+DemmonsBe,Betty,Demmons,400087556,Life Science,5279
+WallaceJo,Joanne,Wallace,400061967,Nursing,3493
+ZajcPe,Peter,Zajc,400009727,Biomedical Engineering,5788
+MorrisAn,Angie,Morris,400033514,Biomedical Engineering,4149
+StoverJo,Joshua,Stover,400072205,Computer Science,3048
+WoosterEv,Evangeline,Wooster,400041901,Health Science,5480
+GarciaMa,Mary,Garcia,400045891,Computer Science,5508
+WilliamsEl,Eloy,Williams,400023423,Health Science,3747
+BretonKr,Kris,Breton,400062384,Computer Science,3245
+BereznyKa,Katherine,Berezny,400050097,Biomedical Engineering,1887

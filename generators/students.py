@@ -1,6 +1,7 @@
 import csv
 import random
 import names
+import psycopg2
 
 
 # Track macIDs and student_numbers in entries to prevent duplicates
@@ -41,11 +42,11 @@ programs = ['Computer Science', 'Nursing', 'Engineering', 'Life Science',
             'Health Science', 'Biomedical Engineering', 'Software Engineering',
             'Electrical Engineering', 'Sociology']
 
-headers = {'macID', 'fname', 'lname', 'student_num', 'program', 'balance', 'timespan_start_preference'}
+headers = ['macID', 'fname', 'lname', 'student_num', 'program', 'balance']
 
 entries = []
 
-for i in range(0, 100):
+for i in range(0, 250):
     row = []
     fname, lname = generate_fname(), generate_lname()
     # Track macID to keep unique for each row
@@ -58,11 +59,32 @@ for i in range(0, 100):
     student_numbers.append(student_number)
     row.append(generate_program())
     row.append(generate_balance())
-    row.append("")
     entries.append(row)
 
-# Write all the entries into students.csv
+Write all the entries into students.csv
 with open('students.csv', 'w+', newline='') as csvfile:
     writer = csv.writer(csvfile, delimiter=",")
+    writer.writerow(headers)
     for row in entries:
         writer.writerow(row)
+
+pg_credential = {
+    "hostname" : "capstone.cjcyivdiqo6q.us-west-2.rds.amazonaws.com",
+    "port" : 5432,
+    "username" : 'capstone',
+    "password" : 'capstone',
+    "database" : 'Capstone'
+}
+
+conn = psycopg2.connect(host=pg_credential['hostname'],
+                    port=pg_credential['port'],
+                    user=pg_credential['username'],
+                    password=pg_credential['password'],
+                    database=pg_credential['database'])
+# headers = ['macID', 'fname', 'lname', 'student_num', 'program', 'balance', 'timespan_start_preference']
+cursor = conn.cursor()
+for student in entries:
+    cursor.execute("""INSERT INTO mcmaster.student ("macID", "fname", "lname", "student_num", "program", "balance") VALUES(%s, %s, %s, %s, %s, %s)""", 
+    tuple(student))
+    conn.commit() # <- We MUST commit to reflect the inserted data
+cursor.close()

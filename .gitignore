@@ -10,3 +10,4 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+generators/__pycache__/food.cpython-38.pyc
