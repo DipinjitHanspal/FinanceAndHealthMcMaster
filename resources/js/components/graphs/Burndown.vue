@@ -6,12 +6,19 @@ export default {
     return {
       data: {
         //   The number of months needs to be calculated
-        labels: ["September", "October", "November", "December", "January", "Februray"],
+        labels: [
+          "September",
+          "October",
+          "November",
+          "December",
+          "January",
+          "Februray"
+        ],
         datasets: [
           {
             label: "Money spent",
             data: [500, 400, 400, 500, 500, 600],
-            backgroundColor: "rgba(255, 35, 24, 1)",
+            backgroundColor: "rgba(255, 35, 24, 1)"
             // backgroundColor: [
             //   "rgba(255, 99, 132, 0.2)",
             //   "rgba(54, 162, 235, 0.2)",
@@ -30,12 +37,12 @@ export default {
             // ],
             // borderWidth: 1
           },
-        {
-            label : "Money remaining",
-            data : [4800, 4400, 4000, 3500, 3000, 2400],
-            type : "line",
+          {
+            label: "Money remaining",
+            data: [4800, 4400, 4000, 3500, 3000, 2400],
+            type: "line",
             backgroundColor: "rgba(25, 151, 255, 0.4)"
-        }
+          }
         ]
       },
       options: {

@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-header">{{ header }}</div>
     <div class="card-text"></div>
-    <nutrient-pie></nutrient-pie>
+    <nutrient-pie :arr="arr"></nutrient-pie>
   </div>
 </template>
 
@@ -11,7 +11,11 @@ import NutrientPie from "../graphs/NutrientPie.vue";
 export default {
   props: {
     header: {
-      type: String
+      type: String,
+      default : ""
+    },
+    arr : {
+      type: Array
     }
   },
   components: { NutrientPie }

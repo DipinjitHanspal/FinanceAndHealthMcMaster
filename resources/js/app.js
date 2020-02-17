@@ -21,7 +21,7 @@ const store = new Vuex.Store({
             col1: [
               { id: 0, type: "greeting", header: "Greeting" },
               { id: 1, type: "value", value: "2200", header: "Average Calories" },
-              { id: 2, type: "nutrient", header: "Macros" }
+              { id: 2, type: "nutrient", arr: [25, 55, 73],  header: "Macros" }
             ],
             col2: [
               { id: 0, type: "value", header: "Funds Remaining", value: "$2530" },

@@ -3,6 +3,7 @@ import Dashboard from "./components/Dashboard.vue"
 // import Login from "./components/Auth/Login.vue"
 // import Register from "./components/Auth/Register.vue"
 import App from "./components/App.vue"
+import TransactionsLogs from "./components/TransactionsLogs.vue"
 
 const routes = () => {
     return [
@@ -16,6 +17,11 @@ const routes = () => {
             name: "app",
             component: App
         },
+        { 
+            path : "/logs",
+            name: "logs",
+            component : TransactionsLogs
+        }
         // {
         //     path: "/login",
         //     name: "user.login",

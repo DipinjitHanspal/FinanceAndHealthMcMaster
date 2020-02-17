@@ -6,6 +6,7 @@
         :key="item.header+item.type"
         :cardType="item.type"
         :value="item.value"
+        :arr="item.arr"
         :header="item.header"
       ></Card>
     </draggable>
@@ -15,6 +16,7 @@
         :key="item.header+item.type"
         :cardType="item.type"
         :value="item.value"
+        :arr="item.arr"
         :header="item.header"
       ></Card>
     </draggable>
