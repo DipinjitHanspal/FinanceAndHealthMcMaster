@@ -22,6 +22,7 @@ axios.defaults.baseURL = '/api/';
 const store = new Vuex.Store({
     state: {
         user: "Default User",
+        loggedIn : false,
         grid: {
             col1: [
               { id: 0, type: "greeting", header: "Greeting" },
@@ -40,11 +41,14 @@ const store = new Vuex.Store({
         },
         setGrid (state, grid) {
             state.grid = grid
+        },
+        setIsLoggedIn(state, status) {
+            state.loggedIn = status;
         }
     },
     getters: {
         isLoggedIn(state) {
-            return state.user !== null;
+            return state.loggedIn;
         },
     },
     actions : {

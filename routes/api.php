@@ -12,10 +12,15 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::post('auth/login', 'AuthController@login');
-Route::group(['middleware' => 'jwt'], function () {
-    Route::post('auth/logout', 'AuthController@logout');
-    Route::post('auth/refresh', 'AuthController@refresh');
-    Route::post('auth/me', 'AuthController@me');
-    Route::post('dash/setting', 'DashController@setting');
+Route::prefix('auth')->group(function () {
+    Route::post('register', 'AuthController@register');
+    Route::post('login', 'AuthController@login');
+    Route::get('refresh', 'AuthController@refresh');
+    Route::group(['middleware' => 'auth:api'], function(){
+        Route::get('user', 'AuthController@user');
+        Route::post('logout', 'AuthController@logout');
+        // Users
+        Route::get('users', 'UserController@index')->middleware('isAdmin');
+        Route::get('users/{id}', 'UserController@show')->middleware('isAdminOrSelf');
+    });
 });

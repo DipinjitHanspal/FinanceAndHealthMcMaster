@@ -8,9 +8,10 @@
 </template>
 
 <script>
-  // import Login from './Auth/Login.vue'
-  export default{
+  import Dashboard from './Dashboard.vue'
+export default{
     components:{
+      Dashboard
     }
   }
 

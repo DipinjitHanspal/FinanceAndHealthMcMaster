@@ -34,6 +34,12 @@ export default {
     return {
     };
   },
+  created() {
+    console.log('dashboard mounted');
+  },
+  mounted() {
+    console.log('dashboard mounted');
+  },
   computed : {
       grid : {
           get() {

@@ -1,71 +1,116 @@
 <template>
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="/">
-                    {{ app_name }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                {{ app_name }}
+            </a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                    </ul>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Left Side Of Navbar -->
+                <ul class="navbar-nav mr-auto"></ul>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <router-link class="nav-link"  tag="a" :to="{name : 'landing'}">Login</router-link>
-                        </li>
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item" v-if="!loggedIn">
+                        <router-link
+                            class="nav-link"
+                            tag="a"
+                            :to="{ name: 'user.login' }"
+                            >Login</router-link
+                        >
+                    </li>
 
-                        <li class="nav-item dropdown" v-if="loggedIn">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="caret"> {{ user }} </span>
+                    <li class="nav-item dropdown" v-if="$auth.check()">
+                        <a
+                            id="navbarDropdown"
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            role="button"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                        >
+                            <span class="caret"> {{ user }} </span>
+                        </a>
+
+                        <div
+                            class="dropdown-menu dropdown-menu-right"
+                            aria-labelledby="navbarDropdown"
+                        >
+                            <a
+                                class="dropdown-item"
+                                href="logout"
+                                @click="logout"
+                            >
+                                Logout
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="logout" onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                    Logout
-                                </a>
-
-                                <form id="logout-form" action="logout" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                        <li class="nav-item" v-else>
-                            <router-link class="nav-link" tag="a" :to="{name : 'user.register'}">Register</router-link>
-                        </li>
-                    </ul>
-                </div>
+                            <form
+                                id="logout-form"
+                                action="logout"
+                                method="POST"
+                                style="display: none;"
+                            >
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                    <li class="nav-item" v-if="!$auth.check()">
+                        <router-link
+                            class="nav-link"
+                            tag="a"
+                            :to="{ name: 'user.register' }"
+                            >Register</router-link
+                        >
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 </template>
 
 <script>
-    export default {
-        props: ['status', 'name', 'app'],
-        data() {
-            return {
-                // user: this.$store.state.user
+export default {
+    props: ['status', 'name', 'app'],
+    data() {
+        return {
+            loggedIn : false
+        }
+    },
+    methods : {
+        logout () {
+            var app = this;
+            this.$auth.logout({
+                makeRequest : true});
+            this.$store.commit('setIsLoggedIn', this.$auth.check());
+            this.loggedIn = !this.loggedIn;
+            console.log(this.loggedIn)
+        }
+    },
+    mounted() {
+        this.loggedIn = this.$store.getters.isLoggedIn;
+        console.log(this.loggedIn)
+    },
+    computed: {
+        app_name() {
+            if (!this.app) {
+                return 'Finance Tracker'
             }
         },
-        mounted() {
-        },
-        computed: {
-            app_name() {
-                if (!this.app) {
-                    return 'Finance Tracker'
-                }
-            },
-            loggedIn() {
-                return this.$store.getters.isLoggedIn
-            },
-            user() {
-                return this.$store.state.user
-            }
+        user() {
+            return this.$store.state.user
         }
     }
+}
 </script>

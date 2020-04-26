@@ -6,11 +6,6 @@
                     <div class="card-header">Login</div>
                     <div class="card-body">
                         <div id="login_user">
-                            <input
-                                type="hidden"
-                                name="_token"
-                                :value="csrf_token"
-                            />
                             <div class="form-group row">
                                 <label
                                     for="email"
@@ -132,14 +127,12 @@ export default {
             console.log(app.password);
             this.$auth.login({
                 data : {
-                    email : 'test2@gmail.com',
-                    password : 'test1234'
+                    email : app.email,
+                    password : app.password
                 },
-                redirect : {name : 'app'}, 
                 fetchUser : true,
                 success (msg) {
-                    console.log(msg);
-                },
+                    app.$store.commit('setIsLoggedIn', app.$auth.check());                },
                 error : function (err) {
                     console.log(err);
                 }
@@ -158,32 +151,6 @@ export default {
             }
         },
         checkForm: function(e) {
-            //     this.errors = [];
-            //     if (!this.email) {
-            //         this.errors.push("Email required.");
-            //     }
-            //     if (!this.password) {
-            //         this.errors.push("Password required.");
-            //     } else {
-            //         var formContents = jQuery("#auth_user").serialize();
-            //         console.log("Auth requested");
-            //         axios.post("/auth", formContents).then(
-            //             (response, status, request) => {
-            //                 if (response.data == null) {
-            //                     alert(response.data.user);
-            //                 } else {
-            //                     this.$store.commit(
-            //                         "setAuthUser",
-            //                         response.data.user
-            //                     );
-            //                     return true;
-            //                 }
-            //             },
-            //             function() {
-            //                 console.log("failed");
-            //             }
-            //         );
-            //     }
         }
     }
 };

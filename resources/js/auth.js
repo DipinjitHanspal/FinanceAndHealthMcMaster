@@ -1,9 +1,9 @@
-import basic from '@websanova/vue-auth/drivers/auth/basic'
+import bearer from '@websanova/vue-auth/drivers/auth/bearer'
 import axios from '@websanova/vue-auth/drivers/http/axios.1.x'
 import router from '@websanova/vue-auth/drivers/router/vue-router.2.x'
 
 const config = {
-    auth : basic,
+    auth : bearer,
     http : axios,
     router : router,
     tokenDefaultName : 'laravel-jwt-auth',
@@ -16,11 +16,10 @@ const config = {
     loginData : {
         url : 'auth/login',
         method : 'POST',
-        redirect : {name : 'app'},
+        redirect : {name : 'user.dashboard'},
         fethUser : true
     },
     logoutData : {
-        url : 'auth/logout',
         method : 'POST',
         redirect : {name : 'user.login'},
         makeRequest : true
