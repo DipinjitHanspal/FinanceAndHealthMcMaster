@@ -11,27 +11,4 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Auth::routes();
-
-// Route::post('/login', 'Auth\LoginController@login');
-Route::post('/logout', 'Auth\LoginController@logout')->name('/');
-Route::post('/dashboard', 'HomeController@index')->middleware('auth');
-// Route::post('/home', 'Home')
 Route::get('/{any}', 'HomeController@index')->where('any', '.*');
-
-// Route::get('/login', );
-// Auth::routes();
-
-Route::post('/auth','Auth\LoginController@login');
-// // Route::get('/loginUser', 'LoginController@login');
-
-// // Route::get('/home', 'HomeController@index')->name('home');
-
-// // Auth::routes();
-
-// // Route::get('/home', 'HomeController@index')->name('home');
-
-// Route::get('/test', 'TestController@test');

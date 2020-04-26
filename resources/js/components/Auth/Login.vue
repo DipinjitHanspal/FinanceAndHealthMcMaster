@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="card-header">Login</div>
                     <div class="card-body">
-                        <form method="POST" @submit="checkForm" id="login_user">
+                        <div id="login_user">
                             <input
                                 type="hidden"
                                 name="_token"
@@ -80,8 +80,8 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
                                     <button
-                                        type="submit"
                                         class="btn btn-primary"
+                                        @click="loginButton"
                                     >
                                         Login
                                     </button>
@@ -96,7 +96,7 @@
                                     <!-- @endif -->
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -126,6 +126,25 @@ export default {
         }
     },
     methods: {
+        loginButton() {
+            const app = this;
+            console.log(app.email);
+            console.log(app.password);
+            this.$auth.login({
+                data : {
+                    email : 'test2@gmail.com',
+                    password : 'test1234'
+                },
+                redirect : {name : 'app'}, 
+                fetchUser : true,
+                success (msg) {
+                    console.log(msg);
+                },
+                error : function (err) {
+                    console.log(err);
+                }
+            });
+        },
         getClass(property) {
             if (property == "email") {
                 return this.error_email
@@ -139,32 +158,32 @@ export default {
             }
         },
         checkForm: function(e) {
-            this.errors = [];
-            if (!this.email) {
-                this.errors.push("Email required.");
-            }
-            if (!this.password) {
-                this.errors.push("Password required.");
-            } else {
-                var formContents = jQuery("#auth_user").serialize();
-                console.log("Auth requested");
-                axios.post("/auth", formContents).then(
-                    (response, status, request) => {
-                        if (response.data == null) {
-                            alert(response.data.user);
-                        } else {
-                            this.$store.commit(
-                                "setAuthUser",
-                                response.data.user
-                            );
-                            return true;
-                        }
-                    },
-                    function() {
-                        console.log("failed");
-                    }
-                );
-            }
+            //     this.errors = [];
+            //     if (!this.email) {
+            //         this.errors.push("Email required.");
+            //     }
+            //     if (!this.password) {
+            //         this.errors.push("Password required.");
+            //     } else {
+            //         var formContents = jQuery("#auth_user").serialize();
+            //         console.log("Auth requested");
+            //         axios.post("/auth", formContents).then(
+            //             (response, status, request) => {
+            //                 if (response.data == null) {
+            //                     alert(response.data.user);
+            //                 } else {
+            //                     this.$store.commit(
+            //                         "setAuthUser",
+            //                         response.data.user
+            //                     );
+            //                     return true;
+            //                 }
+            //             },
+            //             function() {
+            //                 console.log("failed");
+            //             }
+            //         );
+            //     }
         }
     }
 };

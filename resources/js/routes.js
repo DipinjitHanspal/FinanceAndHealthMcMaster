@@ -8,22 +8,34 @@ const routes = () => {
         {
             path: "/",
             name: "landing",
-            component: ExampleComponent
+            component: ExampleComponent,
+            meta : {
+                auth : undefined
+            }
         },
         {
             path: "/app",
             name: "app",
-            component: App
+            component: App,
+            meta : {
+                auth : undefined
+            }
         },
         {
             path: "/login",
             name: "user.login",
-            component: Login
+            component: Login,
+            meta : {
+                auth : false
+            }
         },
         {
             path: "/register",
             name: "user.register",
-            component: Register
+            component: Register,
+            meta : {
+                auth : undefined
+            }
         }
     ]
 }

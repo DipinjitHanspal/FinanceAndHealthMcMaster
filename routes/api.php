@@ -12,6 +12,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('auth/login', 'AuthController@login');
+Route::group(['middleware' => 'jwt'], function () {
+    Route::post('auth/logout', 'AuthController@logout');
+    Route::post('auth/refresh', 'AuthController@refresh');
+    Route::post('auth/me', 'AuthController@me');
+    Route::post('dash/setting', 'DashController@setting');
 });
