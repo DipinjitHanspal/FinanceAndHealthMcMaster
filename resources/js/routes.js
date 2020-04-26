@@ -1,6 +1,7 @@
 import ExampleComponent from "./components/ExampleComponent.vue"
-import Login from "./components/Auth/Login.vue"
-import Register from "./components/Auth/Register.vue"
+import Dashboard from "./components/Dashboard.vue"
+// import Login from "./components/Auth/Login.vue"
+// import Register from "./components/Auth/Register.vue"
 import App from "./components/App.vue"
 
 const routes = () => {
@@ -8,9 +9,9 @@ const routes = () => {
         {
             path: "/",
             name: "landing",
-            component: ExampleComponent,
+            component: Dashboard,
             meta : {
-                auth : undefined
+                auth : true
             }
         },
         {

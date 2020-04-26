@@ -21,30 +21,50 @@ Vue.use(Vuex);
 axios.defaults.baseURL = '/api/';
 const store = new Vuex.Store({
     state: {
-        user : null
+        user: "Default User",
+        grid: {
+            col1: [
+              { id: 0, type: "greeting", header: "Greeting" },
+              { id: 1, type: "value", value: "2200", header: "Average Calories" },
+              { id: 2, type: "nutrient", header: "Macros" }
+            ],
+            col2: [
+              { id: 0, type: "value", header: "Funds Remaining", value: "$2530" },
+              { id: 1, type: "burndown", header: "Burndown" }
+            ]
+          }
     },
     mutations: {
         setAuthUser(state, user) {
             state.user = user;
+        },
+        setGrid (state, grid) {
+            state.grid = grid
         }
     },
-    getters : {
+    getters: {
         isLoggedIn(state) {
             return state.user !== null;
+        },
+    },
+    actions : {
+        updateGridStore(context) {
+            let jsonGrid = JSON.parse(JSON.stringify(context.state.grid));
+            $cookies.set("grid-data", jsonGrid);
         }
     }
 });
 
 const router = new VueRouter({
     mode: "history",
-    routes, 
+    routes
 });
 Vue.router = router; 
 Vue.use(VueAuth, auth);
 
 const app = new Vue({
-    el: '#app', // mount the base component
+    el: "#app", // mount the base component
     components: { NavBar },
     router,
     store
-})
+});
