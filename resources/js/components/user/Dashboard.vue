@@ -1,5 +1,5 @@
 <template>
-  <div class="row justify-content-center" style="width:100%" >
+  <div class="row justify-content-center" style="width:100%" v-if="dataReady">
     <draggable v-model="grid.col1" class="col-sm-5" group="a" @end="updateGridStore">
       <Card
         v-for="item in grid.col1"
@@ -32,17 +32,31 @@ export default {
   },
   data() {
     return {
+      dataReady : false,
     };
   },
+  beforeCreate() {   
+  },
   created() {
-    console.log('dashboard mounted');
+    console.log('dashboard created');
+  },
+  beforeMount() {
+    this.loadGrid();
+    console.log(this.$store.state.grid);
   },
   mounted() {
     console.log('dashboard mounted');
+    console.log(this.$store.state.grid);
   },
   componentWillUnmount() { 
-    this.$store.dispatch('updateGridModel');
-  },
+    gridConfig = this.$store.state.grid
+    console.log(gridConfig);
+    // this.$axios.post('user/set-dash', {
+    //   params : {
+    //     config : gridConfig
+    //   }
+    // });
+},
   computed : {
       grid : {
           get() {
@@ -58,6 +72,14 @@ export default {
   methods: {
       updateGridStore() {
           this.$store.dispatch('updateGridStore');
+      },
+      async loadGrid() {
+        const app = this
+        const x = await axios.get('dashboard/load-dash').then((res) => {
+          console.log(JSON.parse(JSON.stringify(res['data'])));
+          app.$store.commit('setGrid', res['data']);
+          app.dataReady = true;
+        });
       }
   }
 };

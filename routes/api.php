@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashController;
 use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,9 @@ Route::prefix('auth')->group(function () {
         Route::get('users', 'UserController@index')->middleware('isAdmin');
         Route::get('users/{id}', 'UserController@show')->middleware('isAdminOrSelf');
     });
+});
+
+Route::middleware('auth:api')->prefix('dashboard')->group(function() {
+    Route::post('set-dash', 'DashboardController@setConfig');
+    Route::get('load-dash', 'DashboardController@loadConfig');
 });
