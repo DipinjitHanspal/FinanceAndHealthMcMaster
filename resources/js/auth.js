@@ -20,8 +20,9 @@ const config = {
         fethUser : true
     },
     logoutData : {
+        url : 'auth/logout',
         method : 'POST',
-        redirect : {name : 'user.login'},
+        redirect : {name : 'landing'},
         makeRequest : true
     },
     fetchData : {

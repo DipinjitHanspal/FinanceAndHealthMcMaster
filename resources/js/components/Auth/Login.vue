@@ -123,8 +123,6 @@ export default {
     methods: {
         loginButton() {
             const app = this;
-            console.log(app.email);
-            console.log(app.password);
             this.$auth.login({
                 data : {
                     email : app.email,
@@ -132,7 +130,8 @@ export default {
                 },
                 fetchUser : true,
                 success (msg) {
-                    app.$store.commit('setIsLoggedIn', app.$auth.check());                },
+                    app.$store.commit('setLoggedIn', true);                
+                },
                 error : function (err) {
                     console.log(err);
                 }

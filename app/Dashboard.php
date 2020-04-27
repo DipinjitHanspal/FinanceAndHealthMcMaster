@@ -10,19 +10,19 @@ class Dashboard extends Model
 {
 
     public static function setConfig(int $id, string $config){ 
+        // error_log($config);
         DB::table('users')->where('id', $id)->update(array('dashboard-config' => $config));
     }
 
     public static function loadConfig(int $id) { 
-        $config = json_encode(DB::table('users')->find($id, ['dashboard-config']));
-        $validator = Validator::make([$config], ['dashboard-config' => 'required']);
+        $config = json_decode(DB::table('users')->where('id', $id)->value('dashboard-config'));
+        error_log($config);
         // Add default value if its empty
-        if ($validator->fails()) {
+        if ($config == "{}") {
             $config = Dashboard::loadDefault();
-            error_log($config);
             Dashboard::setConfig($id, $config);
         }
-        return $config;
+        return json_encode($config);
     }
 
     public static function loadDefault() {

@@ -18,7 +18,7 @@ export const store = new Vuex.Store({
             const data = JSON.parse(grid);
             state.grid = data;
         },
-        setIsLoggedIn(state, status) {
+        setLoggedIn(state, status) {
             state.loggedIn = status;
         },
         loadGridModel() {

@@ -36,6 +36,7 @@ class AuthController extends Controller
         }
         return response()->json(['error' => 'login_error'], 401);
     }
+
     public function logout()
     {
         JWTAuth::invalidate(JWTAuth::getToken());
@@ -44,6 +45,7 @@ class AuthController extends Controller
             'msg' => 'Logged out Successfully.'
         ], 200);
     }
+
     public function user(Request $request)
     {
         $user = User::find(Auth::user()->id);

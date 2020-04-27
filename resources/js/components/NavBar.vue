@@ -22,7 +22,7 @@
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item" v-if="!loggedIn">
+                    <li class="nav-item" v-if="!$auth.check()">
                         <router-link
                             class="nav-link"
                             tag="a"
@@ -48,22 +48,9 @@
                             class="dropdown-menu dropdown-menu-right"
                             aria-labelledby="navbarDropdown"
                         >
-                            <a
-                                class="dropdown-item"
-                                href="logout"
-                                @click="logout"
-                            >
+                            <a class="dropdown-item" @click="logout">
                                 Logout
                             </a>
-
-                            <form
-                                id="logout-form"
-                                action="logout"
-                                method="POST"
-                                style="display: none;"
-                            >
-                                @csrf
-                            </form>
                         </div>
                     </li>
                     <li class="nav-item" v-if="!$auth.check()">
@@ -82,35 +69,38 @@
 
 <script>
 export default {
-    props: ['status', 'name', 'app'],
+    props: ["status", "name", "app"],
     data() {
-        return {
-            loggedIn : false
+        return {};
+    },
+    methods: {
+        logout() {
+            const gridConfig = JSON.stringify(this.$store.state.grid);
+            console.log(gridConfig);
+            axios.post('dashboard/set-dash', {
+            config : gridConfig
+            });
+            this.$auth.logout();
         }
     },
-    methods : {
-        logout () {
-            var app = this;
-            this.$auth.logout({
-                makeRequest : true});
-            this.$store.commit('setIsLoggedIn', this.$auth.check());
-            this.loggedIn = !this.loggedIn;
-            console.log(this.loggedIn)
-        }
-    },
-    mounted() {
-        this.loggedIn = this.$store.getters.isLoggedIn;
-        console.log(this.loggedIn)
-    },
+    mounted() {},
     computed: {
         app_name() {
             if (!this.app) {
-                return 'Finance Tracker'
+                return "Finance Tracker";
             }
         },
         user() {
-            return this.$store.state.user
+            return this.$store.state.user;
+        },
+        loggedIn: {
+            get() {
+                return this.$store.state.loggedIn;
+            },
+            set(value) {
+                this.$store.commit("setLoggedIn", value);
+            }
         }
     }
-}
+};
 </script>
