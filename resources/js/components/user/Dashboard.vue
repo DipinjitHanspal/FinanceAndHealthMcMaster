@@ -22,7 +22,7 @@
 </template>
 <script>
 import draggable from "vuedraggable";
-import Card from "./Card.vue";
+import Card from '../cards/Card.vue'
 let id = 1;
 export default {
   order: 14,
@@ -39,6 +39,9 @@ export default {
   },
   mounted() {
     console.log('dashboard mounted');
+  },
+  componentWillUnmount() { 
+    this.$store.dispatch('updateGridModel');
   },
   computed : {
       grid : {

@@ -1,17 +1,15 @@
 <template>
     <div>
-        <keep-alive>
-            <p>test</p>
-        </keep-alive>
-        <!-- <router-view /> -->
+        <NavBar></NavBar>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-  import Dashboard from './Dashboard.vue'
+  import NavBar from './NavBar.vue'
 export default{
     components:{
-      Dashboard
+      NavBar
     }
   }
 

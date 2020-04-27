@@ -1,5 +1,4 @@
-import ExampleComponent from "./components/ExampleComponent.vue"
-import Dashboard from "./components/Dashboard.vue"
+import Dashboard from "./components/user/Dashboard.vue"
 import Login from "./components/Auth/Login.vue"
 import Register from "./components/Auth/Register.vue"
 import App from "./components/App.vue"
