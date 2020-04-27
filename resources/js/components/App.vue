@@ -1,16 +1,15 @@
 <template>
     <div>
-        <keep-alive>
-            <p>test</p>
-        </keep-alive>
-        <!-- <router-view /> -->
+        <NavBar></NavBar>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-  // import Login from './Auth/Login.vue'
-  export default{
+  import NavBar from './NavBar.vue'
+export default{
     components:{
+      NavBar
     }
   }
 

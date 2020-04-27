@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import GreetingCard from "./cards/GreetingCard.vue";
-import ValueCard from "./cards/ValueCard.vue";
-import NutrientCard from "./cards/NutrientsCard.vue";
-import BurndownCard from "./cards/BurndownCard.vue";
+import GreetingCard from "./GreetingCard.vue";
+import ValueCard from "./ValueCard.vue";
+import NutrientCard from "./NutrientsCard.vue";
+import BurndownCard from "./BurndownCard.vue";
 export default {
   data() {
     return {
