@@ -14,8 +14,7 @@ export const store = new Vuex.Store({
         setAuthUser(state, user) {
             state.user = user;
         },
-        setGrid(state, grid) {
-            const data = JSON.parse(grid);
+        setGrid(state, data) {
             state.grid = data;
         },
         setLoggedIn(state, status) {
@@ -32,7 +31,7 @@ export const store = new Vuex.Store({
     },
     actions: {
         updateGridStore(context) {
-            let jsonGrid = JSON.parse(JSON.stringify(context.state.grid));
+            const jsonGrid = context.state.grid;
             $cookies.set("grid-data", jsonGrid);
         }
     }

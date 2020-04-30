@@ -41,7 +41,7 @@
                             aria-haspopup="true"
                             aria-expanded="false"
                         >
-                            <span class="caret"> {{ user }} </span>
+                            <span class="caret"> {{ $auth.user()['name'] }} </span>
                         </a>
 
                         <div

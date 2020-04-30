@@ -10,7 +10,7 @@ use App\User;
 class DashboardController extends Controller
 {
     public function setConfig(Request $request){
-        $config = json_encode($request->only('config')['config']);
+        $config = $request->only('config')['config'];
         Dashboard::setConfig(Auth::user()->id, $config);
     }
 

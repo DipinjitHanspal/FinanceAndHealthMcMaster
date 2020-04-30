@@ -23,6 +23,8 @@ Route::prefix('auth')->group(function () {
         // Users
         Route::get('users', 'UserController@index')->middleware('isAdmin');
         Route::get('users/{id}', 'UserController@show')->middleware('isAdminOrSelf');
+        // Admin
+        Route::get('user/role', 'UserController@adminCheck');
     });
 });
 

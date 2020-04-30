@@ -58,12 +58,14 @@ export default {
     },
     beforeCreate() {},
     created() {
-      this.loadGrid();
+        if (this.$auth.user()['role'] === 'admin') {
+            this.$router.push({ name : 'user.admin'});
+        } else {
+            this.loadGrid();
+        }
     },
-    beforeMount() {
-    },
-    mounted() {
-    },
+    beforeMount() {},
+    mounted() {},
     componentWillUnmount() {
         gridConfig = this.$store.state.grid;
     },
@@ -83,11 +85,13 @@ export default {
         updateGridStore() {
             this.$store.dispatch("updateGridStore");
         },
-        loadGrid() {
+        async loadGrid() {
             const app = this;
-            const x = axios.get("dashboard/load-dash").then(res => {
-                app.$store.commit("setGrid", res["data"]);
+            const x = await axios.get("dashboard/load-dash").then(res => {
+                const data = JSON.parse(res["data"]);
+                app.$store.commit("setGrid", data);
                 app.dataReady = true;
+                console.log(app.$store.state.grid);
             });
         }
     }

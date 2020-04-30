@@ -3,6 +3,7 @@
     "scripts": {
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch-cmd": "node_modules\\.bin\\webpack --watch --watch-poll --config=node_modules\\laravel-mix\\setup\\webpack.config.js",
         "watch": "node_modules/.bin/webpack --watch --watch-poll --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch-poll": "npm run watch -- --watch-poll",
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -26,12 +27,13 @@
     "dependencies": {
         "@vue/cli": "^4.1.2",
         "@websanova/vue-auth": "^3.1.2-beta",
+        "chart.js": "^2.9.3",
+        "eslint": "^6.8.0",
         "vue": "^2.6.11",
         "vue-axios": "^2.1.5",
-        "vue-router": "^3.1.6",
-        "chart.js": "^2.9.3",
         "vue-chartjs": "^3.5.0",
         "vue-cookies": "^1.6.1",
+        "vue-router": "^3.1.6",
         "vuedraggable": "^2.23.2",
         "vuex": "^3.1.2",
         "webpack": "^4.41.5"

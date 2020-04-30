@@ -23,4 +23,14 @@ class UserController extends Controller
                 'user' => $user->toArray()
             ], 200);
     }
+
+    public function adminCheck(Request $request) {
+        error_log("Admin check");
+        return response()->json([], 404);
+        error_log(User::user()->id);
+        if (User::user()->role === 2) {
+            return response()->json(['role' => 2]);
+        } 
+        return response()->json(['role' => 1]);
+    }
 }

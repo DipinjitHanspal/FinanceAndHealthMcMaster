@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="card-header">Login</div>
                     <div class="card-body">
-                        <div id="login_user">
+                        <form id="login_user">
                             <div class="form-group row">
                                 <label
                                     for="email"
@@ -76,7 +76,7 @@
                                 <div class="col-md-8 offset-md-4">
                                     <button
                                         class="btn btn-primary"
-                                        @click="loginButton"
+                                        @click.prevent="loginButton"
                                     >
                                         Login
                                     </button>
@@ -91,7 +91,7 @@
                                     <!-- @endif -->
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -122,17 +122,19 @@ export default {
     },
     methods: {
         loginButton() {
+            let isAdmin = 1;
             const app = this;
             this.$auth.login({
-                data : {
-                    email : app.email,
-                    password : app.password
+                data: {
+                    email: app.email,
+                    password: app.password
                 },
-                fetchUser : true,
-                success (msg) {
-                    app.$store.commit('setLoggedIn', true);                
+                fetchUser: true,
+                fetchData: true,
+                success(msg) {
+                    app.$store.commit("setLoggedIn", true);
                 },
-                error : function (err) {
+                error: function(err) {
                     console.log(err);
                 }
             });
@@ -149,8 +151,7 @@ export default {
                     : "form-control";
             }
         },
-        checkForm: function(e) {
-        }
+        checkForm: function(e) {}
     }
 };
 </script>

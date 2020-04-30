@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Dashboard;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,11 +12,19 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 class AuthController extends Controller
 {
     public function register(Request $request)
-    {
-        $v = Validator::make($request->all(), [
-            'email' => 'required|email|unique:users',
-            'password'  => 'required|min:3|confirmed',
+    {        
+        // error_log(implode(",", $request->all('name', 'email', 'password')));
+        error_log($request->name);
+        error_log($request->password);
+        error_log($request->email);
+        // $params = $request->all('name', 'email', 'password', 'password_confirmation');
+        $v = Validator::make($request->all('name', 'email', 'password'), [
+            'name' => 'required|min:3|max:50',
+            'email' => 'required|email',
+            'password'  => 'required',
         ]);
+        // $cst = implode(",", $params);
+        // error_log($cst);
         if ($v->fails()) {
             return response()->json([
                 'status' => 'error',
@@ -25,9 +34,11 @@ class AuthController extends Controller
         $user = new User;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
+        $user->name = $request->name;
         $user->save();
         return response()->json(['status' => 'success'], 200);
     }
+
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');

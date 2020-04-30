@@ -3,6 +3,8 @@ import Login from "./components/Auth/Login.vue"
 import Register from "./components/Auth/Register.vue"
 import App from "./components/App.vue"
 import Welcome from './components/Welcome.vue'
+import AdminDashboard from './components/admin/AdminDashboard.vue'
+import Unauth from "./components/admin/Unauth.vue"
 
 const routes = () => {
     return [
@@ -13,6 +15,22 @@ const routes = () => {
             meta : {
                 auth : true
             }
+        },
+        {
+            path : "/403",
+            name : 'unauthorized',
+            component : Unauth,
+            meta : {
+                auth : undefined
+            }
+        },
+        {
+          path : '/admin',
+          name : 'user.admin',
+          component : AdminDashboard,
+          meta : {
+              auth : true
+          }  
         },
         {
             path: "/app",
